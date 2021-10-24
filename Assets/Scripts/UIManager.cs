@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -40,6 +41,6 @@ public class UIManager : MonoBehaviour
     public void UpdateLevelProgress()
     {
         float val = 1f - ((float)Level.Instance.objectsInScene / Level.Instance.totalObjects); //to flip -1
-        progressFillImage.fillAmount = val;
+        progressFillImage.DOFillAmount(val, .4f);
     }
 }
