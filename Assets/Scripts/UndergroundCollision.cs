@@ -19,7 +19,9 @@ public class UndergroundCollision : MonoBehaviour
                 //avoir fait tombé tous les objets
                 if(Level.Instance.objectsInScene == 0)
                 {
-                    //Level.Instance.loadNextLevel();
+                    UIManager.Instance.showLevelCompleted();
+                    Level.Instance.playWinFx();
+                    Invoke("NextLevel", 2f);
                 }
             }
         }
@@ -34,5 +36,9 @@ public class UndergroundCollision : MonoBehaviour
             });
         }
 
+    }
+    void NextLevel()
+    {
+        Level.Instance.loadNextLevel();
     }
 }

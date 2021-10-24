@@ -23,8 +23,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text nextLevelText;
     [SerializeField] TMP_Text currentLevelText;
     [SerializeField] Image progressFillImage;
+
+    [Space]
+    [SerializeField] TMP_Text levelCompletedText;
+
+    [Space]
+    [SerializeField] Image fadePanel;
     void Start()
     {
+        fadeAtStart();
         progressFillImage.fillAmount = 0f;
         setLevelProgressText();
     }
@@ -42,5 +49,15 @@ public class UIManager : MonoBehaviour
     {
         float val = 1f - ((float)Level.Instance.objectsInScene / Level.Instance.totalObjects); //to flip -1
         progressFillImage.DOFillAmount(val, .4f);
+    }
+
+    public void showLevelCompleted()
+    {
+        levelCompletedText.DOFade(1f, .6f).From(0f);
+    }
+
+    public void fadeAtStart()
+    {
+        fadePanel.DOFade(0f, 1.3f).From(1f);
     }
 }

@@ -15,6 +15,9 @@ public class Level : MonoBehaviour
         }
     }
     #endregion
+
+    [Space]
+    [SerializeField] ParticleSystem WinFx;
     public int objectsInScene, totalObjects;
 
     [SerializeField] Transform objectsParent;
@@ -37,5 +40,10 @@ public class Level : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void playWinFx()
+    {
+        WinFx.Play();
     }
 }
