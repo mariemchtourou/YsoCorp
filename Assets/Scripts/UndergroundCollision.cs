@@ -6,14 +6,21 @@ public class UndergroundCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        string tag = other.tag;
-        if (tag.Equals("Object"))
+        if (!Game.isGameover)
         {
-            Debug.Log("object");
+            string tag = other.tag;
+            if (tag.Equals("Object"))
+            {
+                Level.Instance.objectsInScene--;
+                UIManager.Instance.UpdateLevelProgress();
+                Destroy(other.gameObject);
+            }
         }
+
         if (tag.Equals("Obstacle"))
         {
-            Debug.Log("obstacle");
+            Game.isGameover = true;
         }
+
     }
 }
