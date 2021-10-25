@@ -171,7 +171,7 @@ MonoBehaviour:
   radius: 0.39
   holeCenter: {fileID: 13499545}
   moveLimits: {x: 1.39, y: 2.33}
-  moveSpeed: 10
+  moveSpeed: 5
 --- !u!1001 &16639700
 PrefabInstance:
   m_ObjectHideFlags: 0

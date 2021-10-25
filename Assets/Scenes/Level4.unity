@@ -183,7 +183,7 @@ MonoBehaviour:
   radius: 0.39
   holeCenter: {fileID: 13499545}
   moveLimits: {x: 1.39, y: 2.33}
-  moveSpeed: 10
+  moveSpeed: 5
 --- !u!4 &16652154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7348682310782628817, guid: 06fafc4f128b89443909bf971b956745,
